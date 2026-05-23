@@ -56,7 +56,6 @@ namespace Serilog
 				using Core.Logger logger = new LoggerConfiguration()
 					.Enrich.WithProperty("SourceContext", null)
 					.Enrich.WithCaller()
-
 					.WriteTo.Trace(outputTemplate: CallerEnricherOutputTemplate.Default).CreateLogger();
 				logger.ForContext<LoggerEnrichmentConfigurationExtensionsTests>().Information("TEST");
 			}

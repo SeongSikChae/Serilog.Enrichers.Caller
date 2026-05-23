@@ -20,7 +20,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: 10.0.x
 
     - name: Restore dependencies
       run: dotnet restore
@@ -59,7 +59,7 @@ jobs:
     - name: Upload to GitHub Release
       uses: softprops/action-gh-release@v2
       with:
-        files: ./Serilog.Enrichers.Caller/bin/Release/Serilog.Enrichers.Caller.${{ steps.project_version.outputs.version }}.nupkg
+        files: ./Serilog.Enrichers.Caller/bin/Release/Biz.Bizadm.Serilog.Enrichers.Caller.${{ steps.project_version.outputs.version }}.nupkg
         tag_name: ${{ env.tag_name }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
